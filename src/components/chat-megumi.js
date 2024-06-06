@@ -17,6 +17,13 @@ const ChatWithMegumi = () => {
         }
     }, [])
 
+    function handleLogout() {
+        localStorage.removeItem('token')
+        localStorage.removeItem('token_expire_at')
+        localStorage.removeItem('user_id')
+        setIsLogin(false)
+    }
+
     return (
         <div
             id="chat"
@@ -27,6 +34,11 @@ const ChatWithMegumi = () => {
                 <Login setIsLogin={setIsLogin} />
             }
             {isLogin && <>
+                <div className='flex flex-row-reverse mt-8'>
+                    <button onClick={handleLogout} className='px-3 py-2 rounded-lg bg-yellow-400 font-bold'>
+                        登出
+                    </button>
+                </div>
                 <h1 className='text-xl font-semibold my-4'>加藤惠</h1>
                 <ChatHistory {...{ history, setHistory, audioRef, isRecording }} />
                 <SendMsg {...{ setHistory, setIsRecording, audioRef }} />

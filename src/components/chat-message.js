@@ -34,7 +34,7 @@ const ChatMessage = ({ message, isUser, audioUrl, loading, translation,
 
     return (
         <div className="flex items-start gap-4 mb-4" ref={ref}>
-            <div className="avatar rounded-full h-12">
+            <div className="avatar rounded-full h-12 w-12">
                 <img src={isUser ? '/user-avatar.jpg' : '/megumi-avatar.jpg'} alt="" className="object-cover h-full rounded-full" />
             </div>
             <div className="flex flex-col w-full" ref={ref2}>

@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.no-select {
+    user-select: none; /* 对所有浏览器 */
+    -webkit-user-select: none; /* 对于 Safari */
+    -moz-user-select: none; /* 对于 Firefox */
+    -ms-user-select: none; /* 对于 IE/Edge */
+    -webkit-touch-callout: none; /* 对于 iOS */
+}
+
